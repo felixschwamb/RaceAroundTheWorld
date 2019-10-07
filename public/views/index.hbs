@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Race around the world</title>
+	<link rel="stylesheet" type="text/css" href="../css/app.css" />
+	<link rel="stylesheet" href="../assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+	<div id="header">
+		<p id="header_ctn">Race around the world</p>
+	</div>
+	<div id="show" class="cont_row">
+		<div id="left_row">
+			<div id="wrapper">
+				<div id="cont_race_track">
+					<div id="race_track"></div>
+				</div>
+			</div>
+
+
+			<div class="cont_row lap-section">
+				<div class="lap-selection">
+					<div class="lap-header">
+						<p class="lap_header_title">Select number of laps</p>
+						<p class="lap_header_subTitle">
+							One lap takes 5 seconds, max 15 laps per race
+						</p>
+					</div>
+					<div class="cont-lap">
+						<div class="cont_row cont-lap-ctn">
+							<div>
+								<i class="fa fa-plus-square-o" id="icon_plus"></i>
+							</div>
+
+							<div id="lap_counter"></div>
+
+							<div>
+								<i class="fa fa-minus-square-o" id="icon_minus"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="cont_col cont-btn-ctn">
+					<button id="btn-startRace" class="btn" disabled>
+						Start race
+					</button>
+					<button id="btn-stopRace" class="btn" disabled>
+						Reset race
+					</button>
+				</div>
+
+				<div id="cont_lapCounter" class="cont_row">
+					<p class="lap_title">Lap:</p>
+					<div id="cont_lap">
+						<div id="lap_count"></div>
+						<div id="lap_count_total"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="cont-ranking">
+			<div class="cont-header">Driver ranking:</div>
+			<div id="ranking"></div>
+		</div>
+	</div>
+
+	<script src="../js/load_data.js"></script>
+</body>
+
+</html>
