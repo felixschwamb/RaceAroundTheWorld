@@ -53,6 +53,8 @@ const distance = (lat1, long1, lat2, long2) => {
 let raceInterval;
 let intervalIterations = 0;
 
+// function which contains all functions regarding creating, upadating, getting and resetting of the racer-Array
+// function also contains the state of the racer-Array, so it is no global variable and can only be manipulated by functions returned by this function
 const createRacerArray = () => {
 	// constructor of racer
 	class Racer {
@@ -502,6 +504,7 @@ const resetRace = async () => {
 };
 
 // function which contains all functions regarding increasing, decreasing, resetting number of laps and getting and resetting current lap
+// function also contains the state of number of laps selected and the current lap, so they are no global variable and can only be manipulated by functions returned by this function
 const lapNumfunc = () => {
 	let lapNum = 0;
 	let currentLap = 0;
@@ -581,7 +584,7 @@ const lapNumfunc = () => {
 	];
 };
 
-// function which are returned by lapNumfunc and which have access to lapNum and currentLap due to closure
+// functions which are returned by lapNumfunc and which have access to lapNum and currentLap due to closure
 const innerfunction = lapNumfunc();
 const inc = innerfunction[0];
 const dec = innerfunction[1];

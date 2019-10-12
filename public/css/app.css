@@ -104,11 +104,6 @@ p {
 	transition: top 5s linear, left 5s linear;
 }
 
-#racer20 {
-	position: absolute;
-	top: 50%;
-}
-
 .ranking_card {
 	width: 100%;
 	height: auto;
