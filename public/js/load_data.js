@@ -224,8 +224,8 @@ const createRacerElement = (id, color, long, lat) => {
 	racer.classList.add("fa-car");
 	racer.classList.add("race_car");
 	racer.style.color = color;
-	racer.style.fontWeight = 900;
-	racer.style.fontSize = "2.5vh";
+	// racer.style.fontWeight = "bold";
+	racer.style.fontSize = "4vh";
 	racer.style.top = `${lat}%`;
 	racer.style.left = `${long}%`;
 	raceTrack.appendChild(racer);
