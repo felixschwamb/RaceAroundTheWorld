@@ -4,7 +4,7 @@ In this project I built a racing competition based on randomly generated geoloca
 The motiviation for this project is to practice the creation of a web application using data which is dynamically generated on the server. 
 
 ## Screenshot
-<img src="public/assets/image_RatW_2.png">
+<img src="public/assets/image_RatW_3.png">
 
 ## Technologies
 * JavaScript
