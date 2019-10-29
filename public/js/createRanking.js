@@ -1,4 +1,5 @@
 import { getArr } from "./createRacerArray.js";
+import { assignTop, assignZIndex } from "./transitionValues.js";
 
 // HTML structure of ranking cards, which are created dynamically with function below
 // // div0
@@ -67,12 +68,6 @@ const genDivEle = () => {
 	return divArr;
 };
 
-// const genP = class1 => {
-// 	const p = document.createElement("p");
-// 	p.classList.add(class1);
-// 	return p;
-// };
-
 const genPEle = () => {
 	let classArr = [["ranking_name"], ["ranking_make"], ["ranking_distance"]];
 	let pArr = [];
@@ -86,6 +81,7 @@ const genPEle = () => {
 
 // function to create each ranking card (one per racer) as html element and append it to ranking-div
 export const createRankingElementInitial = (
+	id,
 	name,
 	make,
 	distance,
@@ -116,25 +112,37 @@ export const createRankingElementInitial = (
 		.appendChild(pElements[2]).innerHTML = `${Number(distance.toFixed(2))} km`;
 
 	divElements[0].style.background = color;
+	divElements[0].id = id;
 };
 
-export const createRankingElement = () => {
+export const updateRankingElement = (itemElement, rank, distance) => {
+	const rankDisplay = itemElement.getElementsByClassName("ranking_rank")[0];
+	const distanceDisplay = itemElement.getElementsByClassName(
+		"ranking_distance"
+	)[0];
+
+	rankDisplay.textContent = `${rank} /`;
+	distanceDisplay.textContent = `${Number(distance.toFixed(2))} km`;
+};
+
+export const newRankingAfterLap = () => {
 	const racerArr = getArr();
+	const arrLength = racerArr.length;
+
+	// clone the racer array
+	const prevRacerArr = JSON.parse(JSON.stringify(racerArr));
+
 	const sortedRacerArr = racerArr.sort(
 		(a, b) => b.totalDistance - a.totalDistance
 	);
 
-	// console.log("sorted array: ", sortedRacerArr);
-
 	sortedRacerArr.forEach(item => {
+		const itemElement = document.getElementById(item.id);
+		const prevRank = getRacerRank(item.id, prevRacerArr);
 		const rank = getRacerRank(item.id, sortedRacerArr);
-		createRankingElementInitial(
-			item.name,
-			item.carMake,
-			item.totalDistance,
-			item.color,
-			rank
-		);
+		assignTop(itemElement, rank, "ranking_card", ranking);
+		assignZIndex(itemElement, arrLength, prevRank, rank);
+		updateRankingElement(itemElement, rank, item.totalDistance);
 	});
 };
 

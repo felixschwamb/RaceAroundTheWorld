@@ -102,8 +102,6 @@ const createRacerArray = () => {
 
 		const distanceLap = distance(lat1, long1, lat2, long2);
 		item.totalDistance += distanceLap;
-		// console.log("distance: ", distanceLap);
-		// console.log("distance on item: ", item.totalDistance);
 	};
 
 	const updateRacerArr = data => {

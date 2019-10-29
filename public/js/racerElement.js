@@ -10,12 +10,14 @@ import {
 import {
 	getRacerRank,
 	createRankingElementInitial,
-	createRankingElement
+	newRankingAfterLap
 } from "./createRanking.js";
 
 import { lapCount, raceInterval } from "./startReset.js";
 
 import { incCur } from "./lapFunctions.js";
+
+import { assignTop } from "./transitionValues.js";
 
 // Interval for setInterval function
 let intervalIterations = 0;
@@ -67,12 +69,17 @@ export const createRacer = async () => {
 
 		// creation of html element for each ranking card
 		createRankingElementInitial(
+			item.id,
 			item.name,
 			item.carMake,
 			item.totalDistance,
 			item.color,
 			rank
 		);
+
+		const itemElement = document.getElementById(item.id);
+		assignTop(itemElement, rank, "ranking_card", ranking);
+		// no new z-Index needed, as ranking was just created
 	});
 };
 
@@ -129,9 +136,7 @@ export const performRaceLap = async () => {
 };
 
 export const intervalLap = lapNum => {
-	// clear the ranking field. Old cards get deleted, so new cards with current data can be shown
-	removeElements("ranking");
-	createRankingElement();
+	newRankingAfterLap();
 
 	intervalIterations++;
 	performRaceLap();

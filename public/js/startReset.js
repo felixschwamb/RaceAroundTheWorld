@@ -3,8 +3,8 @@ import { loadObjects } from "./loadData.js";
 import { getArr, resetArr } from "./createRacerArray.js";
 
 import {
-	createRankingElementInitial,
-	createRankingElement,
+	newRankingAfterLap,
+	updateRankingElement,
 	getRacerRank
 } from "./createRanking.js";
 
@@ -28,6 +28,8 @@ import {
 	performRaceLap,
 	intervalLap
 } from "./racerElement.js";
+
+import { assignTop } from "./transitionValues.js";
 
 // Elements
 export const lapCount = document.getElementById("lap_count");
@@ -76,8 +78,7 @@ export const startRace = () => {
 
 const timeout = interval => {
 	setTimeout(function() {
-		removeElements("ranking");
-		createRankingElement();
+		newRankingAfterLap();
 	}, interval);
 };
 
@@ -103,7 +104,6 @@ export const resetRace = async () => {
 	resetCur();
 
 	removeElements("race_track");
-	removeElements("ranking");
 
 	const racerArr = getArr();
 	// resetting positions of race cars
@@ -117,13 +117,10 @@ export const resetRace = async () => {
 
 		const rank = getRacerRank(item.id, racerArr);
 
-		createRankingElementInitial(
-			item.name,
-			item.carMake,
-			item.totalDistance,
-			item.color,
-			rank
-		);
+		const itemElement = document.getElementById(item.id);
+		assignTop(itemElement, rank, "ranking_card", ranking);
+		// no new z-Index needed, as ranking was just reseted without animation
+		updateRankingElement(itemElement, rank, item.totalDistance);
 	});
 };
 
