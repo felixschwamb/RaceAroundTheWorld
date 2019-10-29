@@ -36,8 +36,11 @@ app.get("/get-objects", async (req, res) => {
 		for (let i = 1; i < 11; i++) {
 			genObj(i, o);
 		}
-		// console.log(o);
-		res.status(200).send(o);
+        // console.log(o);
+        const oJSON = JSON.stringify(o)
+        console.log(oJSON);
+
+		res.status(200).send(oJSON);
 	} catch (e) {
 		res.status(400).send(e);
 	}
