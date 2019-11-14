@@ -31,6 +31,8 @@ import {
 
 import { assignTop } from "./transitionValues.js";
 
+import { infoEvent, expandEvent } from "./triggerViews.js";
+
 // Elements
 export const lapCount = document.getElementById("lap_count");
 const lapCountTotal = document.getElementById("lap_count_total");
@@ -41,6 +43,11 @@ export let raceInterval;
 
 // Creation of initial starting position
 createRacer();
+
+// Adding event listener to info icon in select laps section, 
+// and to arrow icons to expand/mimimize the ranking
+infoEvent();
+expandEvent();
 
 export const startRace = () => {
 	performRaceLap();

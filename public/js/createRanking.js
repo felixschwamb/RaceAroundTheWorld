@@ -5,7 +5,7 @@ import { assignTop, assignZIndex } from "./transitionValues.js";
 // // div0
 // <div class="cont_col ranking_card">
 // 	// div1
-// 	<div class="cont_row cont-ctn">
+// 	<div class="cont-ctn">
 // 		// div2
 // 		<div class="cont_col cont-name">
 // 			// p0
@@ -16,7 +16,7 @@ import { assignTop, assignZIndex } from "./transitionValues.js";
 // 		// div3
 // 		<div class="cont_col cont-info">
 // 			// div4
-// 			<div class="cont_row cont-rank">
+// 			<div class="cont-rank">
 // 				// div5
 // 				<div class="ranking_rank">1 /</div>
 // 				// div6
@@ -26,7 +26,7 @@ import { assignTop, assignZIndex } from "./transitionValues.js";
 // 				</div>
 // 			</div>
 // 			// div8
-// 			<div class="cont_row cont-distance">
+// 			<div class="cont-distance">
 // 				// p2
 // 				<p class="ranking_distance">1000000 km</p>
 // 			</div>
@@ -47,13 +47,13 @@ const genDiv = (class1, class2) => {
 const genDivEle = () => {
 	let classArr = [
 		["cont_col", "ranking_card"],
-		["cont_row", "cont-ctn"],
+		["cont-ctn"],
 		["cont_col", "cont-name"],
 		["cont_col", "cont-info"],
-		["cont_row", "cont-rank"],
+		["cont-rank"],
 		["ranking_rank"],
 		["ranking_rank_total"],
-		["cont_row", "cont-distance"]
+		["cont-distance"]
 	];
 
 	let divArr = [];

@@ -8,10 +8,10 @@
 html {
 	margin: 0;
 	padding: 0;
-	font-size: 2.5vh;
 }
 
 body {
+	position: relative;
 	margin: 0;
 	padding: 0;
 	height: 100vh;
@@ -22,19 +22,9 @@ p {
 	padding: 0;
 }
 
-.cont_row {
-	display: flex;
-	flex-direction: row;
-}
-
 .cont_col {
 	display: flex;
 	flex-direction: column;
-}
-
-#show {
-	width: 100%;
-	height: 85%;
 }
 
 #header {
@@ -42,65 +32,78 @@ p {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 15%;
+	padding: 25px 0 10px 0;
 }
 
 #header_ctn {
-	font-size: 3rem;
+	font-size: 26px;
 	font-weight: 900;
 }
 
-#left_row {
+.wrapper_cont_RaceTrack {
 	display: flex;
-	flex-direction: column;
-	position: relative;
-	height: 100%;
-	width: 55%;
-	padding-left: 2%;
-}
-
-#wrapper {
-	width: 100%;
-	position: relative;
-	padding-top: 54%;
-	margin-bottom: 2.5%;
+	justify-content: center;
 }
 
 #cont_race_track {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
+	width: 370px;
+	height: 200px;
+	margin-bottom: 20px;
 	background-image: url("../assets/world-map-1997599_1280.jpg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	border: 0.2rem solid #bdbdbd;
+	border: 2px solid #bdbdbd;
 }
 
 #race_track {
 	position: relative;
-	height: 94%;
-	width: 96%;
+	height: 92%;
+	width: 94%;
+	z-index: 5;
 }
 
-#cont-ranking {
-	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	width: 45%;
-	padding: 0 2%;
+#cont_ranking {
+	position: relative;
+	padding: 0 10px;
+	margin-bottom: 20px;
 }
 
-.cont-header {
-	font-size: 1.75rem;
+.cont_ranking_header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.cont_header {
+	font-size: 20px;
 	font-weight: 800;
-	margin-bottom: 2%;
+}
+
+#icon_arrowDown,
+#icon_arrowUp {
+	color: #bdbdbd;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#icon_arrowUp {
+	display: none;
 }
 
 #ranking {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	position: relative;
+	width: 100%;
+	height: 200px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .race_car {
@@ -108,10 +111,14 @@ p {
 	transition: top 5s linear, left 5s linear;
 }
 
+.fa.race_car {
+	font-size: 20px;
+}
+
 .ranking_card {
 	width: 100%;
 	height: auto;
-	margin-bottom: 3%;
+	margin-bottom: 10px;
 	padding: 5px;
 	white-space: nowrap;
 	box-shadow: 2.5px 2.5px 2.5px #9e9e9e;
@@ -137,13 +144,13 @@ p {
 }
 
 .ranking_name {
-	font-size: 1.4rem;
+	font-size: 16px;
 	font-weight: 800;
 	width: 100%;
 }
 
 .ranking_make {
-	font-size: 1rem;
+	font-size: 14px;
 	font-weight: 600;
 	white-space: nowrap;
 }
@@ -166,7 +173,7 @@ p {
 .ranking_rank {
 	display: flex;
 	justify-content: flex-end;
-	font-size: 1.4rem;
+	font-size: 20px;
 	font-weight: 600;
 	width: 50%;
 	margin-right: 2%;
@@ -174,7 +181,7 @@ p {
 }
 
 .ranking_rank_total {
-	font-size: 1.2rem;
+	font-size: 16px;
 	font-weight: 600;
 	height: 100%;
 	margin-left: 3px;
@@ -187,7 +194,7 @@ p {
 }
 
 .ranking_distance {
-	font-size: 1.2rem;
+	font-size: 20px;
 	font-weight: 600;
 	white-space: nowrap;
 }
@@ -206,20 +213,28 @@ p {
         background: #bdbdbd (grey 400)
         color: #757575 (grey 600) */
 
-.cont-btn-ctn {
+.wrapper_cont_btn {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding: 0 10px;
+}
+
+.cont_btn_ctn {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 25%;
+	width: 350px;
+	margin-bottom: 20px;
 }
 
 .btn {
-	width: 70%;
-	height: 30%;
+	width: 120px;
+	height: 50px;
 	background: #2196f3;
 	color: white;
 	border: none;
-	font-size: 1rem;
+	font-size: 20px;
 	font-weight: 600;
 }
 
@@ -241,28 +256,32 @@ p {
 /* ------------------ */
 /* Selection of number of laps */
 
-.lap-section {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
+.wrapper_lap_btn {
 	width: 100%;
+	margin-top: 20px;
 }
 
-.lap-selection {
-	width: 50%;
+.lap_section {
+	position: relative;
+	padding: 0 10px;
+	margin-bottom: 10px;
 }
 
-.cont-lap {
+#icon_info {
+	cursor: pointer;
+}
+
+.cont_lap_selectors {
 	display: flex;
-	justify-content: flex-start;
-
+	justify-content: center;
+	height: 40px;
+	margin-bottom: 10px;
 }
 
-.cont-lap-ctn {
+.cont_lap_ctn {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 50%;
+	justify-content: center;
+	width: 150px;
 }
 
 .fa-plus-square-o {
@@ -275,7 +294,7 @@ p {
 }
 
 #icon_plus {
-	font-size: 2rem;
+	font-size: 28px;
 	color: #2196f3;
 }
 
@@ -285,7 +304,7 @@ p {
 }
 
 #icon_minus {
-	font-size: 2rem;
+	font-size: 28px;
 	color: #2196f3;
 }
 
@@ -310,61 +329,157 @@ p {
 	cursor: default;
 }
 
-#lap_counter {
-	font-size: 1.5rem;
-	font-weight: 600;
+.cont_plusMinus {
+	display: flex;
+	align-items: center;
 }
 
-.lap-header {
-	margin-bottom: 2.5%;
+.cont_lap_counter {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#lap_counter {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 0 20px;
+}
+
+.lap_header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom: 10px;
 }
 
 .lap_header_title {
-	font-size: 1.5rem;
+	font-size: 20px;
 	font-weight: 900;
-	margin-bottom: 1.5vh;
+	margin-right: 10px;
+}
+
+#cont_lap_info {
+	position: absolute;
+	top: 32.5px;
+	display: none;
+	height: 40px;
+	padding: 10px;
+	background: #2196f3;
+	color: white;
+	opacity: 0.9;
+	border-radius: 5px;
 }
 
 .lap_header_subTitle {
-	font-size: 1rem;
+	font-size: 15px;
 	font-weight: 400;
-	margin-bottom: 2.5vh;
 }
 
 /* ------------------ */
 /* Lap counter */
+.wrapper_lapCounter {
+	width: 100%;
+	height: 30px;
+}
 
 #cont_lapCounter {
 	display: none;
 	justify-content: flex-end;
 	align-items: flex-start;
-	height: 50%;
-	width: 25%;
+	width: 100%;
+	padding: 0 10px;
+	margin-bottom: 5px;
 }
 
 .lap_title {
-	font-size: 1.5rem;
+	font-size: 20px;
 	font-weight: 900;
-	height: 75%;
+	height: 100%;
+	width: 60px;
 }
 
 #cont_lap {
 	display: flex;
 	justify-content: flex-end;
-	height: 75%;
-	width: 50%;
+	width: 60px;
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
 }
 
 #lap_count {
-	font-size: 1.5rem;
+	font-size: 20px;
 	font-weight: 900;
 	margin-right: 7.5%;
-	white-space: nowrap
+	white-space: nowrap;
 }
 
 #lap_count_total {
+	font-size: 16px;
 	font-weight: 900;
+}
+
+
+/*----------------------------------*/
+@media only screen and (min-width: 768px) {
+	.wrapper_raceTrack_ranking {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+
+	#cont_race_track {
+		width: 450px;
+		height: 245px;
+	}
+
+	.wrapper_lap_btn {
+		position: absolute;
+		top: 350px;
+		left: -385px;		
+	}
+
+	#icon_arrowDown,
+	#icon_arrowUp {
+		display: none;
+	}
+
+	.wrapper_raceTrack_ranking {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	#cont_ranking {
+		height: 750px;
+	}
+
+	#ranking {
+		height: 100%;
+		width: 290px;
+		overflow-y: initial ;
+		overflow-x: initial ;
+	}
+}
+
+/*----------------------------------*/
+@media only screen and (min-width: 1000px) {
+
+	#cont_race_track {
+		width: 650px;
+		height: 350px;
+	}
+
+	#ranking {
+		width: 325px;
+		overflow-y: initial ;
+		overflow-x: initial ;
+	}
+
+	.wrapper_lap_btn {
+		top: 480px;
+		left: -500px;
+		width: 100%;
+	}
 }

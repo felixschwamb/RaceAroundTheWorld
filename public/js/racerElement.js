@@ -32,7 +32,6 @@ export const createRacer = async () => {
 	}
 
 	const racerArr = getArr();
-	// console.log('Data: ', racerArr)
 
 	const firstLatLongTrans = (item, i) => {
 		const long = item.latLong[i][0];
@@ -93,7 +92,7 @@ export const createRacerElement = (id, color, long, lat) => {
 	racer.classList.add("race_car");
 	racer.style.color = color;
 	// racer.style.fontWeight = "bold";
-	racer.style.fontSize = "4vh";
+	// racer.style.fontSize = "4vh";
 	racer.style.top = `${lat}%`;
 	racer.style.left = `${long}%`;
 	raceTrack.appendChild(racer);

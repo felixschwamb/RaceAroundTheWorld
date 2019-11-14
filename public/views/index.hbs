@@ -12,61 +12,76 @@
 	<div id="header">
 		<p id="header_ctn">Race around the world</p>
 	</div>
-	<div id="show" class="cont_row">
-		<div id="left_row">
-			<div id="wrapper">
+
+
+	<div class="wrapper_raceTrack_ranking">
+		<div class="wrapper_lapCounter_raceTrack">
+			<div class="wrapper_lapCounter">
+				<div id="cont_lapCounter">
+					<p class="lap_title">Lap: </p>
+					<div id="cont_lap">
+						<div id="lap_count"></div>
+						<div id="lap_count_total"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="wrapper_cont_RaceTrack">
 				<div id="cont_race_track">
 					<div id="race_track"></div>
 				</div>
 			</div>
+		</div>
 
+		<div id="cont_ranking">
+			<div class="cont_ranking_header">
+				<div class="cont_header">Driver ranking:</div>
+				<i class="fa fa-angle-down" id="icon_arrowDown"></i>
+				<i class="fa fa-angle-up" id="icon_arrowUp"></i>
+			</div>
+			<div id="ranking"></div>
 
-			<div class="cont_row lap-section">
-				<div class="lap-selection">
-					<div class="lap-header">
+			<div class="wrapper_lap_btn">
+				<div class="lap_section">
+					<div class="lap_header">
 						<p class="lap_header_title">Select number of laps</p>
+						<i class="fa fa-info-circle" id="icon_info"></i>
+					</div>
+
+					<div id="cont_lap_info">
 						<p class="lap_header_subTitle">
-							One lap takes 5 seconds, max 15 laps per race
+							One lap 5 seconds, max 15 laps per race
 						</p>
 					</div>
-					<div class="cont-lap">
-						<div class="cont_row cont-lap-ctn">
-							<div>
+
+					<div class="cont_lap_selectors">
+						<div class="cont_lap_ctn">
+							<div class="cont_plusMinus">
 								<i class="fa fa-plus-square-o" id="icon_plus"></i>
 							</div>
 
-							<div id="lap_counter"></div>
+							<div class="cont_lap_counter">
+								<div id="lap_counter"></div>
+							</div>
 
-							<div>
+							<div class="cont_plusMinus">
 								<i class="fa fa-minus-square-o" id="icon_minus"></i>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="cont_col cont-btn-ctn">
-					<button id="btn-startRace" class="btn" disabled>
-						Start race
-					</button>
-					<button id="btn-stopRace" class="btn" disabled>
-						Reset race
-					</button>
-				</div>
-
-				<div id="cont_lapCounter" class="cont_row">
-					<p class="lap_title">Lap:</p>
-					<div id="cont_lap">
-						<div id="lap_count"></div>
-						<div id="lap_count_total"></div>
+				<div class="wrapper_cont_btn">
+					<div class="cont_btn_ctn">
+						<button id="btn-startRace" class="btn" disabled>
+							Start race
+						</button>
+						<button id="btn-stopRace" class="btn" disabled>
+							Reset race
+						</button>
 					</div>
-
 				</div>
 			</div>
-		</div>
-
-		<div id="cont-ranking">
-			<div class="cont-header">Driver ranking:</div>
-			<div id="ranking"></div>
 		</div>
 	</div>
 
